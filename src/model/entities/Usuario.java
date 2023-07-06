@@ -5,13 +5,15 @@ public class Usuario {
 
     private String name;
     private Integer age;
+    private Integer id;
 
     public Usuario(){
     }
 
-    public Usuario(String name, Integer age) {
+    public Usuario(String name, Integer age, Integer id) {
         this.name = name;
         this.age = age;
+        this.id = id;
     }
 
     public String getName() {
@@ -30,6 +32,13 @@ public class Usuario {
         this.age = age;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -39,20 +48,22 @@ public class Usuario {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(name, usuario.name) && Objects.equals(age, usuario.age);
+        return Objects.equals(name, usuario.name) && Objects.equals(age, usuario.age) && Objects.equals(id, usuario.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age);
+        return Objects.hash(name, age, id);
     }
-    
+
 
     @Override
     public String toString() {
         return "{" +
             " name='" + getName() + "'" +
             ", age='" + getAge() + "'" +
+            ", id='" + getId() + "'" +
             "}";
     }
+
 }

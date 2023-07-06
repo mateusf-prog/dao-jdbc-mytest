@@ -7,7 +7,7 @@ import model.entities.Usuario;
 public interface UsuarioDao {
     
     void insert(Usuario user);
-    void update(Usuario user);
-    void delete(Usuario user);
-    void findUserById(Integer id);
+    void updateById(Usuario user);
+    void deleteById(Usuario user);
+    Usuario findUserById(Integer id);
 }
